@@ -24,24 +24,50 @@ body {
     overflow: hidden;
 }
 
+/* PANEL IZQUIERDO - Color de tu logo */
 .left-panel {
     flex: 1;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: white;
+    background: #08112b; /* Color exacto de tu logo */
+    color: white; /* Texto blanco para contraste */
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Estilos para el logo */
+.logo-container {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 30px;
+    /* filter: brightness(0) invert(1); */ /* ← COMENTA O ELIMINA ESTA LÍNEA */
 }
 
 .left-panel h1 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    text-align: center;
+    word-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
 .left-panel p {
     font-size: 1.1rem;
     line-height: 1.6;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap:break-word;
 }
 
 .right-panel {
@@ -60,35 +86,43 @@ label {
     color: #333;
 }
 
-.user-info {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    border-left: 4px solid #6e8efb;
-}
-
-.user-info p {
-    margin: 5px 0;
-}
-
-.user-info a {
-    color: #6e8efb;
-    text-decoration: none;
-}
-
-input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     transition: border 0.3s;
+    background: white;
+    border-left: 4px solid #094293;
+    margin-bottom: 5px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+    border-color: #1a2a52;
+    box-shadow: 0 0 5px rgba(26, 42, 82, 0.5);
 }
 
-input[type="password"]:focus {
-    border-color: #6e8efb;
-    outline: none;
+/* Estilo para el texto placeholder */
+input::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+/* Cuando el input está en foco, el placeholder desaparece */
+input:focus::placeholder {
+    color: #ccc;
+}
+
+/* Placeholder alternativo: gris más claro y estilo normal */
+input::placeholder {
+    color: #999;  /* Gris más claro */
+    font-style: normal;
 }
 
 .divider {
@@ -97,10 +131,11 @@ input[type="password"]:focus {
     margin: 25px 0;
 }
 
+/* BOTÓN PRINCIPAL - Versión más clara del azul */
 .btn-register {
     width: 100%;
     padding: 14px;
-    background: #6e8efb;
+    background: #1a2a52; /* Azul más claro que tu logo */
     color: white;
     border: none;
     border-radius: 5px;
@@ -111,9 +146,74 @@ input[type="password"]:focus {
 }
 
 .btn-register:hover {
-    background: #5a7dfa;
+    background: #2a3a62; /* Un poco más claro al hover */
 }
 
+/* BORDES Y DETALLES EN AZUL MÁS CLARO */
+.user-info {
+    border-left: 4px solid #1a2a52;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    border-left: 4px solid #1a2a52;
+}
+
+/* PREFIJO DEL TELÉFONO */
+.phone-prefix {
+    background: #1a2a52;
+    color: white;
+    border-color: #1a2a52;
+}
+
+.phone-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    padding: 12px 15px;
+    font-size: 1rem;
+    outline: none;
+    border-left: 4px solid #094293;
+}
+
+.phone-hint {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* Estilos para el focus */
+.phone-input:focus {
+    border-color: #094293;
+    box-shadow: 0 0 5px rgba(9, 66, 147, 0.3);
+}
+
+/* ACTUALIZA LOS COLORES PRINCIPALES */
+.left-panel {
+    background: #094293; /* Fondo azul solicitado */
+    color: #fff; /* Texto claro para mejor contraste */
+}
+
+.btn-register {
+    background: #094293;
+    color: white;
+}
+
+.btn-register:hover {
+    background: #094293;
+}
+
+input:focus, .phone-input:focus {
+    border-color: #094293;
+    box-shadow: 0 0 5px rgba(9, 66, 147, 0.3);
+}
+
+/* ENLACES */
 .terms {
     text-align: center;
     margin-top: 15px;
@@ -121,9 +221,28 @@ input[type="password"]:focus {
     color: #666;
 }
 
-.terms a {
-    color: #6e8efb;
+.terms a,
+.login-link a,
+.user-info a {
+    color: #1a2a52;
     text-decoration: none;
+}
+
+.terms a:hover,
+.login-link a:hover {
+    color: #08112b; /* Color original de tu logo */
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.login-link a {
+    color: #4FC3F7;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .social-register {
@@ -158,24 +277,94 @@ input[type="password"]:focus {
     transform: translateY(-2px);
 }
 
-.login-link {
-    text-align: center;
-    margin-top: 25px;
-    color: #666;
-}
-
-.login-link a {
-    color: #6e8efb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        min-width: auto;
     }
     
     .left-panel {
-        padding: 30px;
+        padding: 30px 30px;
+        text-align: center;
+        min-height: 300px;
+    }
+    
+    .logo-container {
+        position: static;
+        margin-bottom: 20px;
+    }
+    
+    .left-panel h1 {
+        margin-top: 0;
+        font-size: 2rem; 
+        word-wrap: break-word;
+    }
+
+    .left-panel p {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 100%; 
+    }
+
+    .right-panel {
+        padding: 30px 25px;
     }
 }
+
+/* Para pantallas muy chiquitas (por ejemplo: telefonos) */
+@media (max-width: 400px) {
+    .left-panel h1 {
+        font-size: 1.8rem; /* Título más pequeño */
+    }
+
+    .left-panel p {
+        font-size: 0.9rem;
+    }
+    body {
+        padding: 10px; /* Menos padding en el body */
+    }
+
+    .container {
+        border-radius: 0; /* Sin bordes redondeados */
+    }
+
+}
+
+/* ESTILOS PARA EL CAMPO DE TELÉFONO */
+.phone-prefix {
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    color: #666;
+    font-weight: 500;
+    min-width: 60px;
+    text-align: center;
+}
+
+.phone-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    padding: 12px 15px;
+    font-size: 1rem;
+    outline: none;
+    border-left: 4px solid #094293;
+}
+
+.phone-hint {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* Estilos para el focus */
+.phone-input:focus {
+    border-color: #094293;
+    box-shadow: 0 0 5px rgba(9, 66, 147, 0.3);
+}
+
