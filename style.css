@@ -1,0 +1,479 @@
+/* Variables CSS */
+ :root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-card: #f5f5f5;
+  --text-primary: #1a3d66;
+  --text-secondary: #606060;
+  --text-muted: #a0a0a0;
+  --border-color: #e0e0e0;
+  --accent-color: #1a3d66;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+/* Reset y Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+/* Ajustes para la imagen del logo */
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.logo span,
+.logo .brand-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brand-text {
+  margin-left: 0.25rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Ajustes responsivos para el logo */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 28px;
+  }
+  .brand-text {
+    font-size: 0.95rem;
+  }
+}
+
+ .logo-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #1a3d66 100%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--text-primary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-signin {
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.btn-signin:hover {
+  opacity: 0.7;
+}
+
+ .btn-download {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+ .btn-download:hover {
+  background: #174080;
+  opacity: 0.95;
+}
+
+/* Main Content */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Billing Section */
+.billing-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.billing-toggle {
+  display: flex;
+  gap: 0;
+  background: var(--bg-card);
+  width: fit-content;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.toggle-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  padding: 0.6rem 2rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.toggle-btn.active {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.currency-selector select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Plans Section */
+.plans-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+ .plan-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--text-secondary);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+ .plan-card.recommended {
+  background: #fff;
+  border-color: var(--border-color);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--warning-color);
+  color: var(--bg-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+ .plan-header {
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+}
+
+ .plan-name {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  color: var(--accent-color);
+}
+
+ .plan-price {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: var(--accent-color);
+  font-weight: 400;
+  position: relative;
+}
+
+.plan-price .amount {
+  font-size: 2rem;
+}
+
+.plan-period {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.savings-badge {
+  display: inline-block;
+  background: var(--success-color);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+.plan-body {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+ .plan-description {
+  color: var(--accent-color);
+  margin: 1rem 0 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+ .plan-features li {
+  padding: 0.6rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.plan-features li::before {
+  content: "✓";
+  color: var(--success-color);
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+}
+
+.plan-features li.disabled {
+  color: var(--text-muted);
+}
+
+.plan-features li.disabled::before {
+  content: "✗";
+  color: var(--error-color);
+}
+
+.plan-footer {
+  margin-top: auto;
+}
+
+ .plan-button {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  background: var(--accent-color);
+  color: #fff;
+}
+
+ .plan-button:hover {
+  background: #174080;
+  transform: translateY(-1px);
+}
+
+.plan-card.recommended .plan-button {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.plan-card.recommended .plan-button:hover {
+  background: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+/* Comparison Section */
+.comparison-section {
+  margin-top: 4rem;
+}
+
+.comparison-table {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+
+}
+
+ .comparison-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+.comparison-table tr:hover {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+   .plan-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+/* Menu Mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+}
