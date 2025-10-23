@@ -185,11 +185,56 @@ function initMobileMenu() {
 }
 
 // Inicializar todo cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-  initMobileMenu();
-  
-  // Inicializar precios
-  updatePrices('monthly');
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar menú móvil
+    initMobileMenu();
+    
+    // Inicializar precios
+    updatePrices('monthly');
+    
+    // Variables
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const prices = document.querySelectorAll('.amount');
+    const currencySelect = document.getElementById('currencySelect');
+
+    // Toggle between monthly and yearly billing
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            toggleBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Update prices based on period
+            const period = this.dataset.period;
+            prices.forEach(price => {
+                const amount = period === 'yearly' 
+                    ? price.dataset.yearly 
+                    : price.dataset.monthly;
+                price.textContent = `$${amount}`;
+            });
+        });
+    });
+
+    // Currency conversion (simplified example)
+    currencySelect.addEventListener('change', function() {
+        const currency = this.value;
+        // Add currency conversion logic here
+        console.log(`Currency changed to ${currency}`);
+    });
+
+    // Add smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
 
 // Reinicializar el menú móvil al cambiar el tamaño
