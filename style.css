@@ -1,0 +1,297 @@
+/* Variables CSS */
+ :root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-card: #f5f5f5;
+  --text-primary: #1a3d66;
+  --text-secondary: #606060;
+  --text-muted: #a0a0a0;
+  --border-color: #e0e0e0;
+  --accent-color: #1a3d66; /* color solicitado */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+/* Reset y Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.brand-text {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-signin, .btn-download {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-signin {
+    background-color: transparent;
+    color: #333;
+}
+
+.btn-download {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Billing Section */
+.billing-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.billing-toggle {
+  display: flex;
+  gap: 1rem;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Plans Section */
+.plans-section {
+  margin-bottom: 4rem;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plan-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+}
+
+.recommended {
+    border-color: #007bff;
+}
+
+.recommended-badge {
+    position: absolute;
+    top: -12px;
+    right: 1rem;
+    background: #007bff;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.plan-button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--accent-color); /* ahora usa #1a3d66 */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+    box-shadow: 0 6px 12px rgba(26, 61, 102, 0.12);
+}
+
+.plan-button:hover {
+    background-color: #16334f; /* tono más oscuro del mismo azul */
+    transform: translateY(-3px);
+}
+
+.plan-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(26, 61, 102, 0.18);
+}
+
+/* Botón más destacado para el plan recomendado */
+.plan-card.recommended .plan-button {
+    background: linear-gradient(90deg, #18507a 0%, #123957 100%); /* degradado basado en #1a3d66 */
+    box-shadow: 0 10px 20px rgba(18, 57, 87, 0.2);
+}
+
+/* Comparison Section */
+.comparison-section {
+  margin-top: 4rem;
+}
+
+.comparison-table {
+  overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para la sección de contacto */
+.contacto {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.contacto h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.contacto-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contacto-tarjeta {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 250px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilos para la sección de testimonios */
+.testimonios {
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.testimonio-tarjeta {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Menu Mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
